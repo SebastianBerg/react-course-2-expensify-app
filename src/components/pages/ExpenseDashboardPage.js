@@ -1,12 +1,12 @@
 import React from "react";
-import ExpenseList from "../partials/ExpenseList";
+import ExpensesSummary from "../partials/ExpensesSummary";
 import ExpenseListFilters from "../partials/ExpenseListFilters";
+import ExpenseList from "../partials/ExpenseList";
 
-const ExpenseDashboardPage = () => (
+export const ExpenseDashboardPage = () => (
   <div>
+    <ExpensesSummary />
     <ExpenseListFilters />
     <ExpenseList />
   </div>
 );
-
-export default ExpenseDashboardPage;

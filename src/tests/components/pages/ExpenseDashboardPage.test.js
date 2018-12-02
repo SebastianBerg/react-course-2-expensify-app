@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import ExpenseDashboardPage from "../../../components/pages/ExpenseDashboardPage";
+import { ExpenseDashboardPage } from "../../../components/pages/ExpenseDashboardPage";
 
 test("should render the ExpenseDashboardPage correctly", () => {
   const wrapper = shallow(<ExpenseDashboardPage />);

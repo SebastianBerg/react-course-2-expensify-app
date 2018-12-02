@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // Page Imports
-import ExpenseDashboardPage from "../components/pages/ExpenseDashboardPage";
+import { ExpenseDashboardPage } from "../components/pages/ExpenseDashboardPage";
 import AddExpensePage from "../components/pages/AddExpensePage";
 import EditExpensePage from "../components/pages/EditExpensePage";
 import HelpPage from "../components/pages/HelpPage";
