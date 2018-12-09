@@ -5,10 +5,11 @@ import selectExpensesTotal from "../../selectors/expenses-total";
 import numeral from "numeral";
 
 export function ExpensesSummary({ expenseCount, expensesTotal }) {
+  const expenseWord = expenseCount === 1 ? "expense" : "expenses";
   return (
     <div>
       <h1>
-        Viewing {expenseCount} expenses totalling{" "}
+        Viewing {expenseCount} {expenseWord} totalling{" "}
         {numeral(expensesTotal / 100).format("$0,0.00")}
       </h1>
     </div>
