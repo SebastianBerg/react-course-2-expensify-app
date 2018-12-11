@@ -1,6 +1,9 @@
 {
   "name": "boilerplate",
-  "version": "8.11.1",
+  "version": "0.1.0",
+  "engines": {
+    "node": "8.11.1"
+  },
   "private": true,
   "dependencies": {
     "dotenv": "^6.2.0",
