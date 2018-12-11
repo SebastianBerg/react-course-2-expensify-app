@@ -1,5 +1,5 @@
 import database from "../firebase/firebase";
-import expenses from "../tests/fixtures/expenses";
+// import expenses from "../tests/fixtures/expenses";
 
 // components calls action generator
 // action generator returns function
