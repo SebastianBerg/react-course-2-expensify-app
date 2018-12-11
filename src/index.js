@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import App from "./App";
 import configureStore from "./store/configureStore";
+import { startSetExpenses } from "./actions/expenses";
 import * as serviceWorker from "./serviceWorker";
 
 const store = configureStore();
@@ -13,6 +14,10 @@ const jsx = (
   </Provider>
 );
 
-ReactDOM.render(jsx, document.getElementById("root"));
+ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
+
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(jsx, document.getElementById("root"));
+});
 
 serviceWorker.unregister();
