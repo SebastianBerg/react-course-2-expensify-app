@@ -27,7 +27,7 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "devstart": "react-app-env start",
+    "devserver": "react-app-env start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-app-env  --env-file=test.env test",
