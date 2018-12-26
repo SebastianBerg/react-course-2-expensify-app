@@ -1,10 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%; // Make 1 rem 10px
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  color: $dark-grey;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
   font-size: $m-size;
+  line-height: 1.6;
 }
 
 button {

@@ -8,6 +8,7 @@ import { startSetExpenses } from "./actions/expenses";
 import { login, logout } from "./actions/auth";
 import * as serviceWorker from "./serviceWorker";
 import { firebase } from "./firebase/firebase";
+import LoadingPage from "./components/pages/LoadingPage";
 
 const store = configureStore();
 const jsx = (
@@ -23,7 +24,7 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById("root"));
+ReactDOM.render(<LoadingPage />, document.getElementById("root"));
 
 serviceWorker.unregister();
 
