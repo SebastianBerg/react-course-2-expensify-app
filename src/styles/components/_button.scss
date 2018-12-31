@@ -25,6 +25,15 @@
     }
   }
 
+  &--facebook {
+    @extend .button;
+    background-color: $facebook-blue;
+
+    &:hover {
+      color: $facebook-blue;
+    }
+  }
+
   &--link {
     background-color: transparent;
   }

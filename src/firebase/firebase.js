@@ -1,4 +1,7 @@
-import * as firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/database";
+import "firebase/auth";
+// import * as firebase from "firebase";
 
 const config = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -13,8 +16,14 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 
-export { firebase, googleAuthProvider, database as default };
+export {
+  firebase,
+  googleAuthProvider,
+  facebookAuthProvider,
+  database as default
+};
 
 // // child_removed
 // database.ref("expenses").on("child_removed", snapshot => {
