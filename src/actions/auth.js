@@ -17,7 +17,7 @@ export const startLoginGoogle = () => {
 
 export const startLoginFacebook = () => {
   return () => {
-    return firebase.auth().signInWithRedirect(facebookAuthProvider);
+    return firebase.auth().signInWithPopup(facebookAuthProvider);
   };
 };
 
