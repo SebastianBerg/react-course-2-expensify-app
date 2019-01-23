@@ -11,8 +11,13 @@
     font-weight: 300;
     margin: 0;
 
+    &--center {
+      text-align: center;
+    }
+
     span {
       font-weight: bold;
+      margin-right: 12px;
     }
   }
 }
