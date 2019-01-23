@@ -7,7 +7,7 @@ class ExpenseForm extends Component {
 
     this.state = {
       name: props.project ? props.project.name : "",
-      initialFunds: props.project ? props.project.initialFunds : 0,
+      initialFunds: props.project ? props.project.initialFunds : "",
       info: props.project ? props.project.info : "",
       calenderFocused: false,
       error: ""

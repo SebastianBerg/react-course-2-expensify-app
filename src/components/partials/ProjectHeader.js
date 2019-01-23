@@ -44,6 +44,7 @@ export class ProjectHeader extends Component {
     const project = projectArray[projectIndex];
     this.props.setCurrentProject(project);
     this.props.startSetExpenses();
+    console.log(this.props.history);
   };
 
   getProjects = uid =>
@@ -83,7 +84,7 @@ export class ProjectHeader extends Component {
               <select
                 className="select"
                 onChange={this.handleProjectSelect}
-                defaultValue="default"
+                defaultValue={this.props.project.name || "default"}
               >
                 <option disabled value="default">
                   Select a Project

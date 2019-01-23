@@ -13,6 +13,12 @@ export const Header = ({ startLogout }) => (
           </Link>
         </div>
         <div>
+          {/* {this.props.location.pathname !== "/dashboard" ? ( */}
+          <Link to="/dashboard" className="button button--link">
+            Home
+          </Link>
+          {/* ) : null} */}
+
           <Link to="/create-project" className="button button--link">
             Create New Project
           </Link>
