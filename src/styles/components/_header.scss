@@ -9,9 +9,7 @@
 
     @media (max-width: $desktop-breakpoint) {
       flex-wrap: wrap;
-      padding: $s-size 0;
-      justify-content: center;
-      // flex-direction: column;
+      padding: 0 0;
     }
 
     &--s-padding {
@@ -22,8 +20,8 @@
 
       @media (max-width: $desktop-breakpoint) {
         flex-wrap: wrap;
-        justify-content: center;
-        // flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
       }
     }
   }

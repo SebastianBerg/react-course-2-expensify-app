@@ -37,9 +37,11 @@
   &--link {
     background-color: transparent;
     padding-right: 0;
+    display: inline;
 
     @media (max-width: $desktop-breakpoint) {
-      padding: $s-size;
+      padding: 0.2rem;
+      font-size: 1.5rem;
     }
   }
 }

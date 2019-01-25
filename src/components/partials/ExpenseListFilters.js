@@ -8,7 +8,6 @@ import {
   setStartDate,
   setEndDate
 } from "../../actions/filters";
-import { Link } from "react-router-dom";
 
 export class ExpenseListFilters extends React.Component {
   state = {
@@ -41,19 +40,7 @@ export class ExpenseListFilters extends React.Component {
   render() {
     return (
       <div className="content-container">
-        <div className="header__content--s-padding">
-          <div className="page-header__actions">
-            <Link className="button show-for-mobile" to="/create-post">
-              Add Expense
-            </Link>
-          </div>
-          <h1 className="page-header__title">Filter expenses to view</h1>
-          <div className="page-header__actions">
-            <Link className="button show-for-desktop" to="/create-post">
-              Add Expense
-            </Link>
-          </div>
-        </div>
+        <h1 className="page-header__title--center">Filter expenses to view</h1>
 
         <div className="input-group">
           <div className="input-group__item">

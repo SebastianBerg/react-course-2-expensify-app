@@ -5,15 +5,11 @@ import selectExpensesTotal from "../../selectors/expenses-total";
 import numeral from "numeral";
 
 export class ExpensesSummary extends React.Component {
-  getCurrentFunds() {
+  getExpensesNumber() {
     const projectArray = Array.from(this.props.expenses);
     if (projectArray) {
-      const projectTotal =
-        projectArray
-          .map(expense => expense.amount)
-          .reduce((prev, next) => prev + next) / 100;
       const expensesNumber = projectArray.length;
-      return `Number of Expenses: ${expensesNumber} Total Cost: ${projectTotal}`;
+      return expensesNumber;
     }
   }
 
@@ -28,8 +24,9 @@ export class ExpensesSummary extends React.Component {
           <div>
             {this.props.expenses.length > 0 ? (
               <h1 className="page-header__title">
-                Currently Viewing <span>{expenseCount}</span>
-                {expenseWord} totalling{" "}
+                Showing <span>{expenseCount}</span>of
+                <span> {this.getExpensesNumber()}</span>
+                {expenseWord} for{" "}
                 <span>{numeral(expensesTotal / 100).format("$0,0")}</span>
               </h1>
             ) : null}

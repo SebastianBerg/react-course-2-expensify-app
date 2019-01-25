@@ -17,17 +17,26 @@ export class Header extends Component {
                 <h1>Expensify</h1>
               </Link>
             </div>
-            <div>
+            <div className="header__content--s-padding">
+              {this.props.project.name ? (
+                <div>
+                  <Link to="/create-post" className="button button--link">
+                    Add Expense
+                  </Link>
+                  <Link to="/create-project" className="button button--link">
+                    Edit Project
+                  </Link>
+                </div>
+              ) : null}
               {this.props.location.pathname !== "/dashboard" ? (
                 <Link to="/dashboard" className="button button--link">
                   Home
                 </Link>
               ) : (
                 <Link to="/create-project" className="button button--link">
-                  Create New Project
+                  Create Project
                 </Link>
               )}
-
               <button className="button button--link" onClick={startLogout}>
                 Logout
               </button>
@@ -39,13 +48,17 @@ export class Header extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  project: state.project
+});
+
 const mapDispatchToProps = dispatch => ({
   startLogout: () => dispatch(startLogout())
 });
 
 export default withRouter(
   connect(
-    undefined,
+    mapStateToProps,
     mapDispatchToProps
   )(Header)
 );
