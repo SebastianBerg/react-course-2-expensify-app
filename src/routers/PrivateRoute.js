@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
+import { StickyContainer, Sticky } from "react-sticky";
 
 // Partial Imports
 import Header from "../components/partials/Header";
@@ -14,10 +15,17 @@ export const PrivateRoute = ({
     {...rest}
     component={props =>
       isAuthenticated ? (
-        <div>
-          <Header />
+        <StickyContainer>
+          <Sticky>
+            {({ style }) => (
+              <header style={style}>
+                <Header />
+              </header>
+            )}
+          </Sticky>
+
           <Component {...props} />
-        </div>
+        </StickyContainer>
       ) : (
         <Redirect to="/" />
       )

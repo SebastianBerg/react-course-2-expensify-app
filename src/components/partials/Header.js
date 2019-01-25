@@ -9,7 +9,7 @@ export class Header extends Component {
     const { startLogout } = this.props;
 
     return (
-      <header className="header">
+      <header className="header" style={{ opacity: ".97" }}>
         <div className="content-container">
           <div className="header__content">
             <div>
