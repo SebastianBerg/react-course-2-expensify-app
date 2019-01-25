@@ -4,7 +4,7 @@ import createHistory from "history/createBrowserHistory";
 
 // Page Imports
 import LoginPage from "../components/pages/LoginPage";
-import { ExpenseDashboardPage } from "../components/pages/ExpenseDashboardPage";
+import ExpenseDashboardPage from "../components/pages/ExpenseDashboardPage";
 import AddExpensePage from "../components/pages/AddExpensePage";
 import AddProjectPage from "../components/pages/AddProjectPage";
 import EditExpensePage from "../components/pages/EditExpensePage";

@@ -11,6 +11,11 @@ body {
   font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
   font-size: $m-size;
   line-height: 1.6;
+  margin-bottom: $l-size;
+
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $s-size;
+  }
 }
 
 button {

@@ -3,6 +3,11 @@
   margin-bottom: $l-size;
   padding: $l-size 0;
 
+  @media (max-width: $desktop-breakpoint) {
+    margin-bottom: $m-size;
+    padding: $m-size 0;
+  }
+
   &__actions {
     margin-top: $m-size;
   }
@@ -13,6 +18,7 @@
 
     &--center {
       text-align: center;
+      margin-bottom: 0;
     }
 
     span {

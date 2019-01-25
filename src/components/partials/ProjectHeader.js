@@ -9,11 +9,9 @@ export class ProjectHeader extends Component {
     super(props);
     this.state = {
       projects: this.getProjects(this.props.auth.uid),
-      project: { isLoading: true }
+      project: { isLoading: true, initialFunds: 0 }
     };
   }
-
-  calculateCurrentFunds() {}
 
   createSelectItems() {
     let projectArray = Array.from(this.state.projects);
@@ -44,7 +42,6 @@ export class ProjectHeader extends Component {
     const project = projectArray[projectIndex];
     this.props.setCurrentProject(project);
     this.props.startSetExpenses();
-    console.log(this.props.history);
   };
 
   getProjects = uid =>
@@ -68,16 +65,27 @@ export class ProjectHeader extends Component {
     this.getProjects(this.props.auth.uid);
   }
 
+  getCurrentFunds() {
+    return (
+      this.props.project.initialFunds -
+      Array.from(this.props.expenses)
+        .map(expense => expense.amount)
+        .reduce((prev, next) => prev + next) /
+        100
+    );
+  }
+
   render() {
     return (
       <div className="page-header">
         <div className="content-container">
           <div className="input-group__item header__content">
             <h1 className="page-header__title">
+              {this.props.project.name ? "Project: " : null}
               {this.props.project.name ? (
                 <span>{this.props.project.name}</span>
               ) : (
-                <span>Select a Project</span>
+                <span>Select / Create a Project</span>
               )}
             </h1>
             {!this.state.project.isLoading ? (
@@ -94,14 +102,26 @@ export class ProjectHeader extends Component {
             ) : null}
           </div>
 
-          <div className="header__content">
-            <h1 className="page-header__title">
-              Starting Funds: <span>{this.props.project.initialFunds}</span>
-            </h1>
-            <h1 className="page-header__title">
-              Current Funds: <span>{this.props.project.initialFunds}</span>
-            </h1>
-          </div>
+          {this.props.project.name ? (
+            <div className="header__content">
+              <h1 className="page-header__title">
+                Project Budget: <span>${this.props.project.initialFunds}</span>
+              </h1>
+              {this.props.expenses.length > 0 ? (
+                <h1 className="page-header__title">
+                  Remaining Funds:{" "}
+                  <span
+                    className={
+                      this.getCurrentFunds() < 0 ? "text__color--red" : null
+                    }
+                  >
+                    ${this.getCurrentFunds()}
+                  </span>
+                </h1>
+              ) : null}
+            </div>
+          ) : null}
+
           {this.props.project.info ? (
             <div className="container-content">
               <h1 className="page-header__title--center">Additional Info:</h1>
@@ -117,7 +137,8 @@ export class ProjectHeader extends Component {
 
 const mapStateToProps = state => ({
   project: state.project,
-  auth: state.auth
+  auth: state.auth,
+  expenses: state.expenses
 });
 
 const mapDispatchToProps = dispatch => ({

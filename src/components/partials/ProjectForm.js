@@ -67,7 +67,7 @@ class ExpenseForm extends Component {
         <input
           type="amount"
           className="text-input"
-          placeholder="Initial Funds"
+          placeholder="Project Budget"
           value={this.state.initialFunds}
           onChange={this.onAmountChange}
         />

@@ -6,6 +6,26 @@
     display: flex;
     justify-content: space-between;
     padding: $l-size 0;
+
+    @media (max-width: $desktop-breakpoint) {
+      flex-wrap: wrap;
+      padding: $s-size 0;
+      justify-content: center;
+      // flex-direction: column;
+    }
+
+    &--s-padding {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: $s-size 0;
+
+      @media (max-width: $desktop-breakpoint) {
+        flex-wrap: wrap;
+        justify-content: center;
+        // flex-direction: column;
+      }
+    }
   }
 
   &__title {

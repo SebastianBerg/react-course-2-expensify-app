@@ -1,9 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 import ExpensesSummary from "../partials/ExpensesSummary";
 import ExpenseListFilters from "../partials/ExpenseListFilters";
 import ExpenseList from "../partials/ExpenseList";
 import ProjectHeader from "../partials/ProjectHeader";
-import { connect } from "react-redux";
+import ProjectSummary from "../partials/ProjectSummary";
 
 export class ExpenseDashboardPage extends React.Component {
   constructor(props) {
@@ -13,13 +14,26 @@ export class ExpenseDashboardPage extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({
+      project: {
+        name: ""
+      }
+    });
+  }
+
   render() {
     return (
       <div>
         <ProjectHeader />
-        <ExpensesSummary />
-        <ExpenseListFilters />
-        <ExpenseList />
+        {this.props.project.name ? (
+          <div>
+            <ExpenseListFilters />
+            <ExpenseList />
+            <ExpensesSummary />
+            <ProjectSummary />
+          </div>
+        ) : null}
       </div>
     );
   }
