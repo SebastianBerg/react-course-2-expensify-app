@@ -18,15 +18,17 @@ export class Header extends Component {
               </Link>
             </div>
             <div className="header__content--s-padding">
-              {this.props.project.name ? (
-                <div>
-                  <Link to="/create-post" className="button button--link">
-                    Add Expense
-                  </Link>
-                  <Link to="/create-project" className="button button--link">
-                    Edit Project
-                  </Link>
-                </div>
+              {this.props.project.name &&
+              this.props.location.pathname === "/dashboard" ? (
+                <Link to="/create-post" className="button button--link">
+                  Add Expense
+                </Link>
+              ) : null}
+              {this.props.project.name &&
+              this.props.location.pathname === "/dashboard" ? (
+                <Link to="/create-project" className="button button--link">
+                  Edit Project
+                </Link>
               ) : null}
               {this.props.location.pathname !== "/dashboard" ? (
                 <Link to="/dashboard" className="button button--link">
