@@ -6,6 +6,8 @@ const projectReducer = (state = projectReducerDefaultState, action) => {
       return { ...state, ...action.project };
     case "REMOVE_PROJECT":
       return {};
+    case "EDIT_PROJECT":
+      return { ...state, ...action.updates };
     case "SET_PROJECT":
       return {
         ...state,

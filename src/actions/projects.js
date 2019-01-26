@@ -33,11 +33,13 @@ export const startAddProject = (projectData = {}) => {
   };
 };
 
+// REMOVE_PROJECT
 export const removeProject = ({ id } = {}) => ({
   type: "REMOVE_PROJECT",
   id
 });
 
+// START_REMOVE_PROJECT
 export const startRemoveProject = ({ id } = {}) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;
@@ -47,6 +49,29 @@ export const startRemoveProject = ({ id } = {}) => {
       .remove()
       .then(() => {
         dispatch(removeProject({ id }));
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+};
+
+// EDIT_PROJECT
+export const editProject = (id, updates) => ({
+  type: "EDIT_PROJECT",
+  id,
+  updates
+});
+
+export const startEditProject = (id, updates) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    const projectId = getState().project.id;
+    return database
+      .ref(`users/${uid}/projects/${projectId}`)
+      .update(updates)
+      .then(() => {
+        dispatch(editProject(id, updates));
       })
       .catch(err => {
         console.log(err);

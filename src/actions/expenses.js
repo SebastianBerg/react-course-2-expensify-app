@@ -67,6 +67,7 @@ export const editExpense = (id, updates) => ({
   updates
 });
 
+// START_EDIT_EXPENSE
 export const startEditExpense = (id, updates) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid;

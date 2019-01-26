@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ProjectForm from "../partials/ProjectForm";
-import { startAddProject, startRemoveProject } from "../../actions/projects";
+import { startEditProject, startRemoveProject } from "../../actions/projects";
 import OptionModal from "../partials/OptionModal";
 
 export class AddProjectPage extends React.Component {
@@ -18,7 +18,7 @@ export class AddProjectPage extends React.Component {
   };
 
   onSubmit = project => {
-    this.props.startAddProject(project);
+    this.props.startEditProject(this.props.project.id, project);
     this.props.history.push("/");
   };
 
@@ -63,7 +63,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  startAddProject: project => dispatch(startAddProject(project)),
+  startEditProject: (id, project) => dispatch(startEditProject(id, project)),
   startRemoveProject: id => dispatch(startRemoveProject(id))
 });
 
