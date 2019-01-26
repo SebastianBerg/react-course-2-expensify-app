@@ -9,7 +9,6 @@ class ExpenseForm extends Component {
       name: props.project ? props.project.name : "",
       initialFunds: props.project ? props.project.initialFunds : "",
       info: props.project ? props.project.info : "",
-      calenderFocused: false,
       error: ""
     };
   }

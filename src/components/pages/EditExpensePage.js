@@ -47,6 +47,7 @@ export class EditExpensePage extends React.Component {
           handleCloseModal={this.handleCloseModal}
           shouldCloseOnOverlayClick={true}
           shouldCloseOnEsc={true}
+          removalObject={"Expense"}
         />
       </div>
     );
