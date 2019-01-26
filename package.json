@@ -33,7 +33,7 @@
   },
   "scripts": {
     "devserver": "react-app-env start",
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-app-env  --env-file=test.env test",
     "eject": "react-scripts eject"
