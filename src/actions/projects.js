@@ -1,4 +1,5 @@
 import database from "../firebase/firebase";
+
 // SET PROJECT
 export const setCurrentProject = project => ({
   type: "SET_PROJECT",
@@ -28,6 +29,27 @@ export const startAddProject = (projectData = {}) => {
             ...project
           })
         );
+      });
+  };
+};
+
+export const removeProject = ({ id } = {}) => ({
+  type: "REMOVE_PROJECT",
+  id
+});
+
+export const startRemoveProject = ({ id } = {}) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    const projectId = getState().project.id;
+    return database
+      .ref(`users/${uid}/projects/${projectId}`)
+      .remove()
+      .then(() => {
+        dispatch(removeProject({ id }));
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 };

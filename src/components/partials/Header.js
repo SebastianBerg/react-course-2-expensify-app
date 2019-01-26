@@ -26,7 +26,10 @@ export class Header extends Component {
               ) : null}
               {this.props.project.name &&
               this.props.location.pathname === "/dashboard" ? (
-                <Link to="/create-project" className="button button--link">
+                <Link
+                  to={`/edit-project/${this.props.project.id}`}
+                  className="button button--link"
+                >
                   Edit Project
                 </Link>
               ) : null}

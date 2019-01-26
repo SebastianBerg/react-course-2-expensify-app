@@ -7,6 +7,7 @@ import LoginPage from "../components/pages/LoginPage";
 import ExpenseDashboardPage from "../components/pages/ExpenseDashboardPage";
 import AddExpensePage from "../components/pages/AddExpensePage";
 import AddProjectPage from "../components/pages/AddProjectPage";
+import EditProjectPage from "../components/pages/EditProjectPage";
 import EditExpensePage from "../components/pages/EditExpensePage";
 import NotFoundPage from "../components/pages/NotFoundPage";
 
@@ -28,6 +29,10 @@ class AppRouter extends Component {
             <PrivateRoute path="/create-project" component={AddProjectPage} />
             <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
             <PrivateRoute path="/edit/:id" component={EditExpensePage} />
+            <PrivateRoute
+              path="/edit-project/:id"
+              component={EditProjectPage}
+            />
             <Route component={NotFoundPage} />
           </Switch>
         </div>
