@@ -11,7 +11,7 @@ export const LoginPage = ({ startLoginGoogle, startLoginFacebook }) => {
         <button
           className="button"
           onClick={startLoginGoogle}
-          style={{ width: "95%" }}
+          style={{ width: "90%" }}
         >
           Login with Google
         </button>
@@ -19,7 +19,7 @@ export const LoginPage = ({ startLoginGoogle, startLoginFacebook }) => {
         <button
           className="button--facebook"
           onClick={startLoginFacebook}
-          style={{ width: "95%" }}
+          style={{ width: "90%" }}
         >
           Login with Facebook
         </button>
